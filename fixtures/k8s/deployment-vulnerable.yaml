@@ -1,0 +1,35 @@
+# Intentionally vulnerable Kubernetes manifest fixture. Do not deploy this.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      hostNetwork: true
+      containers:
+        - name: webapp
+          image: demo/webapp:latest
+          securityContext:
+            privileged: true
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug-shell
+spec:
+  containers:
+    - name: shell
+      image: busybox
+      securityContext:
+        allowPrivilegeEscalation: true

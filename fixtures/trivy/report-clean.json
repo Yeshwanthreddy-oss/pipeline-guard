@@ -1,0 +1,13 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "demo/webapp:2.0.0",
+  "ArtifactType": "container_image",
+  "Results": [
+    {
+      "Target": "demo/webapp:2.0.0 (debian 12.4)",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Vulnerabilities": []
+    }
+  ]
+}
