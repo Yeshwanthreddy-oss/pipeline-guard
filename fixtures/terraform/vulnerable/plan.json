@@ -1,0 +1,71 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.0",
+  "resource_changes": [
+    {
+      "address": "aws_security_group.web",
+      "type": "aws_security_group",
+      "name": "web",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "name": "web-sg",
+          "ingress": [
+            {
+              "from_port": 22,
+              "to_port": 22,
+              "protocol": "tcp",
+              "cidr_blocks": ["0.0.0.0/0"]
+            },
+            {
+              "from_port": 443,
+              "to_port": 443,
+              "protocol": "tcp",
+              "cidr_blocks": ["0.0.0.0/0"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket.assets",
+      "type": "aws_s3_bucket",
+      "name": "assets",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "bucket": "demo-public-assets",
+          "acl": "public-read"
+        }
+      }
+    },
+    {
+      "address": "aws_ebs_volume.data",
+      "type": "aws_ebs_volume",
+      "name": "data",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "availability_zone": "us-east-1a",
+          "size": 40,
+          "encrypted": false
+        }
+      }
+    },
+    {
+      "address": "aws_db_instance.primary",
+      "type": "aws_db_instance",
+      "name": "primary",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "engine": "postgres",
+          "instance_class": "db.t3.medium",
+          "allocated_storage": 100,
+          "publicly_accessible": true,
+          "storage_encrypted": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.0",
+  "resource_changes": [
+    {
+      "address": "aws_security_group.web",
+      "type": "aws_security_group",
+      "name": "web",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "name": "web-sg",
+          "ingress": [
+            {
+              "from_port": 443,
+              "to_port": 443,
+              "protocol": "tcp",
+              "cidr_blocks": ["10.0.0.0/16"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket.assets",
+      "type": "aws_s3_bucket",
+      "name": "assets",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "bucket": "demo-private-assets",
+          "acl": "private",
+          "server_side_encryption_configuration": [
+            {
+              "rule": [
+                {
+                  "apply_server_side_encryption_by_default": [
+                    {"sse_algorithm": "aws:kms"}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket_public_access_block.assets",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "assets",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "block_public_acls": true,
+          "block_public_policy": true,
+          "ignore_public_acls": true,
+          "restrict_public_buckets": true
+        }
+      }
+    },
+    {
+      "address": "aws_ebs_volume.data",
+      "type": "aws_ebs_volume",
+      "name": "data",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "availability_zone": "us-east-1a",
+          "size": 40,
+          "encrypted": true
+        }
+      }
+    },
+    {
+      "address": "aws_db_instance.primary",
+      "type": "aws_db_instance",
+      "name": "primary",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "engine": "postgres",
+          "instance_class": "db.t3.medium",
+          "allocated_storage": 100,
+          "publicly_accessible": false,
+          "storage_encrypted": true
+        }
+      }
+    }
+  ]
+}
