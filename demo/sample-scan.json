@@ -1,0 +1,354 @@
+{
+  "score": 179,
+  "threshold": 30,
+  "passed": false,
+  "breakdown": {
+    "CRITICAL": 5,
+    "HIGH": 4,
+    "MEDIUM": 9,
+    "LOW": 3,
+    "UNKNOWN": 0
+  },
+  "findings": [
+    {
+      "source": "trivy",
+      "rule_id": "CVE-2023-4863",
+      "title": "CVE-2023-4863: libwebp7 0.6.1-2",
+      "severity": "CRITICAL",
+      "resource": "demo/webapp:1.4.0 (debian 10.13)",
+      "description": "libwebp: heap buffer overflow in WebP lossless format",
+      "fixable": true,
+      "fix_kind": "upgrade_package",
+      "fix_hint": "Upgrade libwebp7 from 0.6.1-2 to 0.6.1-2+deb10u1",
+      "location": "demo/webapp:1.4.0 (debian 10.13)",
+      "raw": {
+        "VulnerabilityID": "CVE-2023-4863",
+        "PkgName": "libwebp7",
+        "InstalledVersion": "0.6.1-2",
+        "FixedVersion": "0.6.1-2+deb10u1",
+        "Severity": "CRITICAL",
+        "Title": "libwebp: heap buffer overflow in WebP lossless format",
+        "Description": "A heap buffer overflow in the WebP image format allows arbitrary code execution."
+      }
+    },
+    {
+      "source": "trivy",
+      "rule_id": "CVE-2022-37434",
+      "title": "CVE-2022-37434: zlib1g 1:1.2.11.dfsg-1",
+      "severity": "HIGH",
+      "resource": "demo/webapp:1.4.0 (debian 10.13)",
+      "description": "zlib: heap-based buffer over-read/overflow in inflate()",
+      "fixable": true,
+      "fix_kind": "upgrade_package",
+      "fix_hint": "Upgrade zlib1g from 1:1.2.11.dfsg-1 to 1:1.2.11.dfsg-1+deb10u2",
+      "location": "demo/webapp:1.4.0 (debian 10.13)",
+      "raw": {
+        "VulnerabilityID": "CVE-2022-37434",
+        "PkgName": "zlib1g",
+        "InstalledVersion": "1:1.2.11.dfsg-1",
+        "FixedVersion": "1:1.2.11.dfsg-1+deb10u2",
+        "Severity": "HIGH",
+        "Title": "zlib: heap-based buffer over-read/overflow in inflate()",
+        "Description": "zlib before 1.2.12 has a heap-based buffer over-read or overflow via a large gzip header."
+      }
+    },
+    {
+      "source": "trivy",
+      "rule_id": "CVE-2021-3999",
+      "title": "CVE-2021-3999: glibc 2.28-10",
+      "severity": "MEDIUM",
+      "resource": "demo/webapp:1.4.0 (debian 10.13)",
+      "description": "glibc: off-by-one buffer overflow/underflow in getcwd()",
+      "fixable": true,
+      "fix_kind": "upgrade_package",
+      "fix_hint": "Upgrade glibc from 2.28-10 to 2.28-10+deb10u2",
+      "location": "demo/webapp:1.4.0 (debian 10.13)",
+      "raw": {
+        "VulnerabilityID": "CVE-2021-3999",
+        "PkgName": "glibc",
+        "InstalledVersion": "2.28-10",
+        "FixedVersion": "2.28-10+deb10u2",
+        "Severity": "MEDIUM",
+        "Title": "glibc: off-by-one buffer overflow/underflow in getcwd()",
+        "Description": "An off-by-one buffer overflow/underflow in glibc's getcwd() function."
+      }
+    },
+    {
+      "source": "trivy",
+      "rule_id": "CVE-2020-16135",
+      "title": "CVE-2020-16135: libbluetooth3 5.50-1.2~deb10u1",
+      "severity": "LOW",
+      "resource": "demo/webapp:1.4.0 (debian 10.13)",
+      "description": "bluez: stack-based buffer overflow in the SDP",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "demo/webapp:1.4.0 (debian 10.13)",
+      "raw": {
+        "VulnerabilityID": "CVE-2020-16135",
+        "PkgName": "libbluetooth3",
+        "InstalledVersion": "5.50-1.2~deb10u1",
+        "FixedVersion": "",
+        "Severity": "LOW",
+        "Title": "bluez: stack-based buffer overflow in the SDP",
+        "Description": "A stack-based buffer overflow was found in BlueZ. No fix available for this base image yet."
+      }
+    },
+    {
+      "source": "trivy",
+      "rule_id": "CVE-2023-32681",
+      "title": "CVE-2023-32681: requests 2.25.1",
+      "severity": "MEDIUM",
+      "resource": "demo/webapp:1.4.0 (requirements.txt)",
+      "description": "requests: proxy-authorization header leak",
+      "fixable": true,
+      "fix_kind": "upgrade_package",
+      "fix_hint": "Upgrade requests from 2.25.1 to 2.31.0",
+      "location": "demo/webapp:1.4.0 (requirements.txt)",
+      "raw": {
+        "VulnerabilityID": "CVE-2023-32681",
+        "PkgName": "requests",
+        "InstalledVersion": "2.25.1",
+        "FixedVersion": "2.31.0",
+        "Severity": "MEDIUM",
+        "Title": "requests: proxy-authorization header leak",
+        "Description": "requests before 2.31.0 leaks Proxy-Authorization headers on redirect."
+      }
+    },
+    {
+      "source": "trivy",
+      "rule_id": "BASE-IMAGE-OUTDATED",
+      "title": "Outdated base image: python:3.9",
+      "severity": "HIGH",
+      "resource": "fixtures/docker/Dockerfile.vulnerable",
+      "description": "python:3.9 is an end-of-life/unpatched tag with a known-safer successor available.",
+      "fixable": true,
+      "fix_kind": "bump_base_image",
+      "fix_hint": "Bump python:3.9 -> python:3.12-slim",
+      "location": "fixtures/docker/Dockerfile.vulnerable:1",
+      "raw": {
+        "repo": "python",
+        "tag": "3.9",
+        "safe_tag": "3.12-slim",
+        "line": 1
+      }
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-SG-OPEN-INGRESS",
+      "title": "Security group 'aws_security_group.web' allows ingress from the public internet",
+      "severity": "CRITICAL",
+      "resource": "aws_security_group.web",
+      "description": "Ingress rule 22-22/tcp is open to ['0.0.0.0/0'].",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "aws_security_group.web",
+      "raw": {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ]
+      }
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-SG-OPEN-INGRESS",
+      "title": "Security group 'aws_security_group.web' allows ingress from the public internet",
+      "severity": "HIGH",
+      "resource": "aws_security_group.web",
+      "description": "Ingress rule 443-443/tcp is open to ['0.0.0.0/0'].",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "aws_security_group.web",
+      "raw": {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ]
+      }
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-S3-PUBLIC-ACL",
+      "title": "S3 bucket 'aws_s3_bucket.assets' has a public ACL",
+      "severity": "CRITICAL",
+      "resource": "aws_s3_bucket.assets",
+      "description": "acl = \"public-read\" grants public read access.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "aws_s3_bucket.assets",
+      "raw": {}
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-RDS-PUBLIC",
+      "title": "RDS instance 'aws_db_instance.primary' is publicly accessible",
+      "severity": "CRITICAL",
+      "resource": "aws_db_instance.primary",
+      "description": "publicly_accessible = true exposes the database to the internet.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "aws_db_instance.primary",
+      "raw": {}
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-ENCRYPTION-MISSING",
+      "title": "'aws_ebs_volume.data' is not encrypted at rest",
+      "severity": "MEDIUM",
+      "resource": "aws_ebs_volume.data",
+      "description": "Resource of type aws_ebs_volume is missing `encrypted`.",
+      "fixable": true,
+      "fix_kind": "add_encryption_flag",
+      "fix_hint": "Set encrypted = true on aws_ebs_volume.data",
+      "location": "aws_ebs_volume.data",
+      "raw": {
+        "resource_type": "aws_ebs_volume",
+        "attribute": "encrypted",
+        "address": "aws_ebs_volume.data"
+      }
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-ENCRYPTION-MISSING",
+      "title": "'aws_db_instance.primary' is not encrypted at rest",
+      "severity": "MEDIUM",
+      "resource": "aws_db_instance.primary",
+      "description": "Resource of type aws_db_instance is missing `storage_encrypted`.",
+      "fixable": true,
+      "fix_kind": "add_encryption_flag",
+      "fix_hint": "Set storage_encrypted = true on aws_db_instance.primary",
+      "location": "aws_db_instance.primary",
+      "raw": {
+        "resource_type": "aws_db_instance",
+        "attribute": "storage_encrypted",
+        "address": "aws_db_instance.primary"
+      }
+    },
+    {
+      "source": "policy:terraform",
+      "rule_id": "TF-S3-SSE-MISSING",
+      "title": "'aws_s3_bucket.assets' has no server-side encryption configured",
+      "severity": "MEDIUM",
+      "resource": "aws_s3_bucket.assets",
+      "description": "Missing `server_side_encryption_configuration` block (SSE-S3 or SSE-KMS).",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "aws_s3_bucket.assets",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-PRIVILEGED-CONTAINER",
+      "title": "Container 'webapp' runs privileged",
+      "severity": "CRITICAL",
+      "resource": "Deployment/webapp",
+      "description": "securityContext.privileged = true grants full host access.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Deployment/webapp/webapp",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-HOST-NETWORK",
+      "title": "'Deployment/webapp' shares the host network namespace",
+      "severity": "HIGH",
+      "resource": "Deployment/webapp",
+      "description": "hostNetwork: true bypasses network policy isolation.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Deployment/webapp",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-ALLOW-PRIVILEGE-ESCALATION",
+      "title": "Container 'webapp' does not set allowPrivilegeEscalation: false",
+      "severity": "MEDIUM",
+      "resource": "Deployment/webapp",
+      "description": "Without an explicit `allowPrivilegeEscalation: false`, a container process can gain more privileges than its parent.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Deployment/webapp/webapp",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-MISSING-RESOURCE-LIMITS",
+      "title": "Container 'webapp' has no cpu/memory limits",
+      "severity": "MEDIUM",
+      "resource": "Deployment/webapp",
+      "description": "Missing resources.limits.cpu/memory lets one pod starve the node under load.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Deployment/webapp/webapp",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-MUTABLE-IMAGE-TAG",
+      "title": "Container 'webapp' uses a mutable image tag",
+      "severity": "LOW",
+      "resource": "Deployment/webapp",
+      "description": "image 'demo/webapp:latest' has no tag (defaults to :latest) or is explicitly :latest, which is not reproducible.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Deployment/webapp/webapp",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-ALLOW-PRIVILEGE-ESCALATION",
+      "title": "Container 'shell' does not set allowPrivilegeEscalation: false",
+      "severity": "MEDIUM",
+      "resource": "Pod/debug-shell",
+      "description": "Without an explicit `allowPrivilegeEscalation: false`, a container process can gain more privileges than its parent.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Pod/debug-shell/shell",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-MISSING-RESOURCE-LIMITS",
+      "title": "Container 'shell' has no cpu/memory limits",
+      "severity": "MEDIUM",
+      "resource": "Pod/debug-shell",
+      "description": "Missing resources.limits.cpu/memory lets one pod starve the node under load.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Pod/debug-shell/shell",
+      "raw": {}
+    },
+    {
+      "source": "policy:kubernetes",
+      "rule_id": "K8S-MUTABLE-IMAGE-TAG",
+      "title": "Container 'shell' uses a mutable image tag",
+      "severity": "LOW",
+      "resource": "Pod/debug-shell",
+      "description": "image 'busybox' has no tag (defaults to :latest) or is explicitly :latest, which is not reproducible.",
+      "fixable": false,
+      "fix_kind": null,
+      "fix_hint": null,
+      "location": "Pod/debug-shell/shell",
+      "raw": {}
+    }
+  ]
+}
